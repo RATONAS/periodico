@@ -1,4 +1,4 @@
-package com.periodico.model;
+package com.periodico.periodico.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
