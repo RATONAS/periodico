@@ -20,7 +20,8 @@ public class Songs{
     private short release;
     private String topic;
 
-    public Songs(){
+    public Songs() {
+    }
 
     public int getId() {
         return this.id;
@@ -79,5 +80,6 @@ public class Songs{
     }
 
     }    
-}
+
+
 
