@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.persistence.GenerationType;
 
 @Entity
@@ -14,8 +15,11 @@ public class Artist {
 
 
     private int id;
+    @NotEmpty
     private String artistName;
+    @NotEmpty
     private String country;
+    @NotEmpty
     private boolean isActive;
 
     public Artist(){

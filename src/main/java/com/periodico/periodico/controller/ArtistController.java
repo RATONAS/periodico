@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.periodico.periodico.service.ArtistService;
 
+import jakarta.validation.Valid;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +21,7 @@ public class ArtistController {
 
     }
    @PostMapping
-    public ResponseEntity<Object> createArtist(@RequestBody Artist artist){
+    public ResponseEntity<Object> createArtist(@Valid @RequestBody Artist artist){
         return artistService.createArtist(artist);
     }
    }

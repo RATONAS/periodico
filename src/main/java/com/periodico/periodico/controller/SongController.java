@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.periodico.periodico.model.Songs;
 import com.periodico.periodico.service.SongService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/v1/songs")
 public class SongController {
@@ -19,7 +21,7 @@ public class SongController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> createSong(@RequestBody Songs song) {
+    public ResponseEntity<Object> createSong(@Valid @RequestBody Songs song) {
         return songService.createSong(song);
     }
 }
