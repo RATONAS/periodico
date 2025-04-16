@@ -54,7 +54,7 @@ Editar
 
 4. Prueba los endpoints con Postman o cURL.
 
-## 🔧Enpoints disponibles:
+## 🔧 Endpoints disponibles:
 
 ## 🎤 Artistas
 POST /artists → Crear artista
