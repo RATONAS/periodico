@@ -8,6 +8,8 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "songs")
@@ -17,17 +19,18 @@ public class Songs {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     @NotEmpty
-    @Max(255)
+    @Size(max = 255)
     private String title;
     @NotEmpty
-    @Min(50)
-    @Max(2000)
+    @Size(min = 50, max = 2000)
     private String lyrics;
     @NotEmpty
     private String genre;
     @NotEmpty
     private String artist;
-    @NotEmpty
+    @NotNull
+    @Min(1900)
+    @Max(2100)
     private short release;
     @NotEmpty
     private String topic;
