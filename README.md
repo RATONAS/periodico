@@ -10,10 +10,7 @@ API RESTful desarrollada con Spring Boot y PostgreSQL para la gestión de letras
 - [📖 Descripción](#-descripción)
 - [🚀 Tecnologías utilizadas](#-tecnologías-utilizadas)
 - [🛠️ Instalación y uso](#️-instalación-y-uso)
-- [🗃️ Estructura del proyecto](#️-estructura-del-proyecto)
 - [🔧 Endpoints disponibles](#-endpoints-disponibles)
-- [📊 Diagrama de base de datos](#-diagrama-de-base-de-datos)
-- [✅ Checklist y planificación](#-checklist-y-planificación)
 - [🧪 Testing](#-testing)
 - [📚 Créditos](#-créditos)
 
