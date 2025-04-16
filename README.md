@@ -83,11 +83,11 @@ asegurando el correcto funcionamiento del flujo completo de creación, consulta 
 ## 📚 Créditos
 Proyecto realizado por el equipo de desarrollo de Periódico de Ayer:
 
-Mariona Cuyàs | Scrum Master & Backend Developer:(https://www.linkedin.com/in/mariona-cuyas/)(https://github.com/cuyass)
-Guadalupe Hani | Product Owner & Backend Developer:(https://www.linkedin.com/in/guadalupe-hani/)(https://github.com/GuadalupeSchajris)
-Carol Más | Backend Developer: (https://www.linkedin.com/in/carolina-mas/)(https://github.com/Carocitta)
-Israel Espín| Backend Developer: (https://www.linkedin.com/in/israelespin/)(https://github.com/iespin)
-Karisha Meléndez | Backend Developer: (https://www.linkedin.com/in/karisssha/)(https://github.com/karisssha)
+Mariona Cuyàs | Scrum Master & Backend Developer:(https://www.linkedin.com/in/mariona-cuyas/)  (https://github.com/cuyass)
+Guadalupe Hani | Product Owner & Backend Developer:(https://www.linkedin.com/in/guadalupe-hani/)  (https://github.com/GuadalupeSchajris)
+Carol Más | Backend Developer: (https://www.linkedin.com/in/carolina-mas/)  (https://github.com/Carocitta)
+Israel Espín| Backend Developer: (https://www.linkedin.com/in/israelespin/)  (https://github.com/iespin)
+Karisha Meléndez | Backend Developer: (https://www.linkedin.com/in/karisssha/)  (https://github.com/karisssha)
 
 Inspirado en la música, la cultura y la memoria de la salsa. 🎺
 
