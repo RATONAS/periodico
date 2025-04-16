@@ -1,8 +1,12 @@
 package com.periodico.periodico.model;
 
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
@@ -22,6 +26,8 @@ public class Artist {
     private String country;
     @NotNull
     private boolean isActive;
+    @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Songs> songs;
 
     public Artist(){
 
@@ -63,7 +69,12 @@ public class Artist {
         this.isActive = isActive;
     }
 
+    public List<Songs> getSongs() {
+        return songs;
+    }
 
-
+    public void setSongs(List<Songs> songs) {
+        this.songs = songs;
+    }
 
 }

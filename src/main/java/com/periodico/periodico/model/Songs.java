@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
@@ -26,8 +28,9 @@ public class Songs {
     private String lyrics;
     @NotEmpty
     private String genre;
-    @NotEmpty
-    private String artist;
+    @ManyToOne
+    @JoinColumn(name = "artist_id", nullable = false)
+    private Artist artist;
     @NotNull
     @Min(1900)
     @Max(2100)
@@ -70,14 +73,6 @@ public class Songs {
         this.genre = genre;
     }
 
-    public String getArtist() {
-        return this.artist;
-    }
-
-    public void setArtist(String artist) {
-        this.artist = artist;
-    }
-
     public short getRelease() {
         return this.release;
     }
@@ -92,6 +87,14 @@ public class Songs {
 
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public void setArtist(Artist artist) {
+        this.artist = artist;
     }
 
 }
