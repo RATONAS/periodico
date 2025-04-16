@@ -54,9 +54,9 @@ Editar
 
 4. Prueba los endpoints con Postman o cURL.
 
-🔧 Endpoints disponibles:
+## 🔧Enpoints disponibles:
 
-🎤 Artistas
+## 🎤 Artistas
 POST /artists → Crear artista
 
 GET /artists → Listar todos los artistas
@@ -65,7 +65,7 @@ GET /artists/{id} → Obtener un artista por ID
 
 DELETE /artists/{id} → Eliminar artista (también elimina sus canciones)
 
-🎵 Canciones
+## 🎵 Canciones
 POST /songs → Crear una canción
 
 GET /songs → Listar todas las canciones
@@ -76,11 +76,11 @@ PUT /songs/{id} → Actualizar canción
 
 DELETE /songs/{id} → Eliminar canción
 
-🧪 Testing
+## 🧪 Testing
 Se han implementado pruebas de integración usando Postman sobre los endpoints más importantes, 
 asegurando el correcto funcionamiento del flujo completo de creación, consulta y eliminación de canciones y artistas.
 
-📚 Créditos
+## 📚 Créditos
 Proyecto realizado por el equipo de desarrollo de Periódico de Ayer:
 
 Mariona Cuyàs | Scrum Master & Backend Developer:(https://www.linkedin.com/in/mariona-cuyas/)(https://github.com/cuyass)
