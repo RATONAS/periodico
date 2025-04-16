@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.persistence.GenerationType;
 
 @Entity
@@ -19,7 +20,7 @@ public class Artist {
     private String artistName;
     @NotEmpty
     private String country;
-    @NotEmpty
+    @NotNull
     private boolean isActive;
 
     public Artist(){
