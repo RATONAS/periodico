@@ -57,11 +57,7 @@ public class Artist {
         this.country = country;
     }
 
-    public boolean isIsActive() {
-        return this.isActive;
-    }
-
-    public boolean getIsActive() {
+    public boolean isActive() {
         return this.isActive;
     }
 
