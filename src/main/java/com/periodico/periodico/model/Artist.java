@@ -3,6 +3,8 @@ package com.periodico.periodico.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import jakarta.validation.constraints.Email;
+
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
@@ -27,6 +29,11 @@ public class Artist {
     @NotEmpty
     @Column(nullable = false)
     private String artistName;
+
+    @Email
+    @NotEmpty
+    @Column(nullable = false, unique = true)
+    private String email;
 
     @NotEmpty
     @Column(nullable = false)
@@ -59,6 +66,14 @@ public class Artist {
 
     public void setArtistName(String artistName) {
         this.artistName = artistName;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getCountry() {
