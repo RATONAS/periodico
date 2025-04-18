@@ -3,6 +3,7 @@ package com.periodico.periodico.model;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -15,17 +16,23 @@ import jakarta.persistence.GenerationType;
 @Entity
 @Table(name = "artists")
 public class Artist {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
-
     private int id;
+
     @NotEmpty
+    @Column(nullable = false)
     private String artistName;
+
     @NotEmpty
+    @Column(nullable = false)
     private String country;
+
     @NotNull
+    @Column(nullable = false)
     private boolean isActive;
+
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Songs> songs;
 

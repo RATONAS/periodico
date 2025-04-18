@@ -1,5 +1,6 @@
 package com.periodico.periodico.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,22 +21,33 @@ public class Songs {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     @NotEmpty
     @Size(max = 255)
+    @Column(nullable = false)
     private String title;
+
     @NotEmpty
     @Size(min = 50, max = 2000)
+    @Column(nullable = false)
     private String lyrics;
+
     @NotEmpty
+    @Column(nullable = false)
     private String genre;
+
     @ManyToOne
     @JoinColumn(name = "artist_id", nullable = false)
     private Artist artist;
+
     @NotNull
     @Min(1900)
     @Max(2100)
+    @Column(nullable = false)
     private short release;
+
     @NotEmpty
+    @Column(nullable = false)
     private String topic;
 
     public Songs() {
