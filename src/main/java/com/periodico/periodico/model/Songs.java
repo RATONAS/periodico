@@ -1,5 +1,7 @@
 package com.periodico.periodico.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -38,6 +40,8 @@ public class Songs {
 
     @ManyToOne
     @JoinColumn(name = "artist_id", nullable = false)
+    @JsonBackReference // To avoid infinite recursion
+    // when serializing the song
     private Artist artist;
 
     @NotNull

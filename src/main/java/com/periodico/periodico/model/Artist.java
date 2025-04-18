@@ -1,6 +1,9 @@
 package com.periodico.periodico.model;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -34,7 +37,9 @@ public class Artist {
     private boolean isActive;
 
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Songs> songs;
+    @JsonManagedReference // To avoid infinite recursion
+    // when serializing the artist
+    private List<Songs> songs = new ArrayList<>();
 
     public Artist(){
 
@@ -80,4 +85,13 @@ public class Artist {
         this.songs = songs;
     }
 
+    public void addSong(Songs song) {
+        songs.add(song);
+        song.setArtist(this);
+    }
+
+    public void removeSong(Songs song) {
+        songs.remove(song);
+        song.setArtist(null);
+    }
 }
