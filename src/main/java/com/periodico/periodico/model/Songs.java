@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -34,9 +36,10 @@ public class Songs {
     @Column(nullable = false)
     private String lyrics;
 
-    @NotEmpty
+    @NotNull
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String genre;
+    private Genre genre;
 
     @ManyToOne
     @JoinColumn(name = "artist_id", nullable = false)
@@ -81,11 +84,11 @@ public class Songs {
         this.lyrics = lyrics;
     }
 
-    public String getGenre() {
+    public Genre getGenre() {
         return this.genre;
     }
 
-    public void setGenre(String genre) {
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
 
