@@ -38,6 +38,7 @@ public Optional<Artist> updateArtist(int id, Artist artistDetails) {
         artist.setArtistName(artistDetails.getArtistName());
         artist.setCountry(artistDetails.getCountry());
         artist.setIsActive(artistDetails.isActive());
+        artist.setEmail(artistDetails.getEmail());
         return artistRepository.save(artist);
     });
 }
