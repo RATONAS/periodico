@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import com.periodico.periodico.model.Artist;
-import com.periodico.periodico.model.Songs;
 import com.periodico.periodico.repository.ArtistRepository;
 
 @Service
@@ -38,7 +37,7 @@ public Optional<Artist> updateArtist(int id, Artist artistDetails) {
     return artistRepository.findById(id).map(artist -> {
         artist.setArtistName(artistDetails.getArtistName());
         artist.setCountry(artistDetails.getCountry());
-        artist.setIsActive(artistDetails.getIsActive());
+        artist.setIsActive(artistDetails.isActive());
         return artistRepository.save(artist);
     });
 }
