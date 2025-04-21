@@ -3,20 +3,19 @@ package com.periodico.periodico.model;
 import java.util.ArrayList;
 import java.util.List;
 
-import jakarta.validation.constraints.Email;
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
-import jakarta.persistence.GenerationType;
 
 @Entity
 @Table(name = "artists")
@@ -44,8 +43,7 @@ public class Artist {
     private boolean isActive;
 
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference // To avoid infinite recursion
-    // when serializing the artist
+    @JsonManagedReference
     private List<Songs> songs = new ArrayList<>();
 
     public Artist(){

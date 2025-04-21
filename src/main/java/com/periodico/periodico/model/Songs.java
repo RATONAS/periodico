@@ -43,8 +43,7 @@ public class Songs {
 
     @ManyToOne
     @JoinColumn(name = "artist_id", nullable = false)
-    @JsonBackReference // To avoid infinite recursion
-    // when serializing the song
+    @JsonBackReference 
     private Artist artist;
 
     @NotNull
