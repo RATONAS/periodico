@@ -29,7 +29,7 @@ Este proyecto ha sido desarrollado bajo metodologías ágiles, utilizando una ar
 - **Lenguaje**: Java V21.
 - **Framework**: Spring Boot V3.4.4.
 - **Base de datos**: PostgreSQL.
-- **Herramientas**: Visual Studio Code, Git, GitHub, Jira, Postman.
+- **Herramientas**: Visual Studio Code, Git, GitHub, Trello, Postman.
 
 ---
 
