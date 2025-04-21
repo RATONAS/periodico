@@ -2,12 +2,10 @@ package com.periodico.periodico.service;
 
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import com.periodico.periodico.model.Songs;
+import com.periodico.periodico.model.Song;
 import com.periodico.periodico.repository.PeriodicoRepository;
 
 @Service
@@ -18,17 +16,17 @@ public class SongService {
         this.periodicoRepository = periodicoRepository;
     }
 
-    public ResponseEntity<Object> createSong(Songs song){
+    public ResponseEntity<Object> createSong(Song song){
         periodicoRepository.save(song);
         return new ResponseEntity<>(song, HttpStatus.CREATED);
     }
 
-public List<Songs> getAllSongs() {
+public List<Song> getAllSongs() {
         return periodicoRepository.findAll();
     }
 
     public ResponseEntity<Object> getSongById(int id) {
-        Optional<Songs> song = periodicoRepository.findById(id);
+        Optional<Song> song = periodicoRepository.findById(id);
         if (song.isPresent()) {
             return new ResponseEntity<>(song.get(), HttpStatus.OK);
         } else {
@@ -36,10 +34,10 @@ public List<Songs> getAllSongs() {
         }
     }
 
-    public ResponseEntity<Object> updateSong(int id, Songs songDetails) {
-        Optional<Songs> optionalSong = periodicoRepository.findById(id);
+    public ResponseEntity<Object> updateSong(int id, Song songDetails) {
+        Optional<Song> optionalSong = periodicoRepository.findById(id);
         if (optionalSong.isPresent()) {
-            Songs song = optionalSong.get();
+            Song song = optionalSong.get();
             song.setTitle(songDetails.getTitle());
             song.setArtist(songDetails.getArtist());
             song.setRelease(songDetails.getRelease());
@@ -53,7 +51,7 @@ public List<Songs> getAllSongs() {
     }
 
     public ResponseEntity<Object> deleteSong(int id) {
-        Optional<Songs> optionalSong = periodicoRepository.findById(id);
+        Optional<Song> optionalSong = periodicoRepository.findById(id);
         if (optionalSong.isPresent()) {
             periodicoRepository.delete(optionalSong.get());
             return new ResponseEntity<>("Song deleted successfully", HttpStatus.OK);

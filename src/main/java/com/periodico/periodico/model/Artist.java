@@ -1,21 +1,10 @@
 package com.periodico.periodico.model;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "artists")
@@ -44,7 +33,7 @@ public class Artist {
 
     @OneToMany(mappedBy = "artist", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
-    private List<Songs> songs = new ArrayList<>();
+    private List<Song> songs = new ArrayList<>();
 
     public Artist(){
 
@@ -90,20 +79,20 @@ public class Artist {
         this.isActive = isActive;
     }
 
-    public List<Songs> getSongs() {
+    public List<Song> getSongs() {
         return songs;
     }
 
-    public void setSongs(List<Songs> songs) {
+    public void setSongs(List<Song> songs) {
         this.songs = songs;
     }
 
-    public void addSong(Songs song) {
+    public void addSong(Song song) {
         songs.add(song);
         song.setArtist(this);
     }
 
-    public void removeSong(Songs song) {
+    public void removeSong(Song song) {
         songs.remove(song);
         song.setArtist(null);
     }

@@ -1,5 +1,4 @@
 package com.periodico.periodico.controller;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,10 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.periodico.periodico.model.Songs;
+import com.periodico.periodico.model.Song;
 import com.periodico.periodico.service.SongService;
-
 import jakarta.validation.Valid;
 
 @RestController
@@ -26,7 +23,7 @@ public class SongController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> createSong(@Valid @RequestBody Songs song) {
+    public ResponseEntity<Object> createSong(@Valid @RequestBody Song song) {
         return songService.createSong(song);
     }
     
@@ -41,7 +38,7 @@ public class SongController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Object> updateSong(@PathVariable  int id, @Valid @RequestBody Songs songDetails) {
+    public ResponseEntity<Object> updateSong(@PathVariable  int id, @Valid @RequestBody Song songDetails) {
         return songService.updateSong(id, songDetails);
     }
     @DeleteMapping("/{id}")

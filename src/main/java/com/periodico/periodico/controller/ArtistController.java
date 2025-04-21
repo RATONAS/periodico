@@ -1,12 +1,7 @@
 package com.periodico.periodico.controller;
-
 import org.springframework.web.bind.annotation.*;
-
-
 import com.periodico.periodico.service.ArtistService;
-
 import jakarta.validation.Valid;
-
 import org.springframework.http.ResponseEntity;
 import com.periodico.periodico.model.Artist;
 
